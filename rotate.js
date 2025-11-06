@@ -1,4 +1,3 @@
-// rotate.js
 const fs = require('fs');
 const path = require('path');
 
@@ -9,14 +8,16 @@ const startMarker = '<!--ROTATE-START-->';
 const endMarker = '<!--ROTATE-END-->';
 
 const lines = [
-  '🕒 Tashkent Time (GMT+5)',
-  'Asadbek, 15 — studying at Algoritm and Oxford courses',
-  'I study web development and English',
-  'Future goal: become a developer in the USA',
-  'Always learning — never stop!'
+  "Hi there 👋 I'm Asadbek",
+  "My name is Asadbek, I'm 15 years old.",
+  "I'm currently studying Algorithms at Oxford (online course/program) and learning web development and English.",
+  "Future goal: I want to become a software developer in the United States.",
+  "🔭 Currently learning: web development, algorithms",
+  "🌱 Studying: English language, coding practices",
+  "🎯 Goal: Build a career as a developer in the USA",
+  "Thanks for visiting my profile — let's connect!"
 ];
 
-// Extract current block
 const start = content.indexOf(startMarker);
 const end = content.indexOf(endMarker, start);
 
@@ -27,15 +28,12 @@ if (start === -1 || end === -1) {
 
 const between = content.slice(start + startMarker.length, end).trim();
 
-// Find index of current line in array (if present)
 let currentIndex = lines.indexOf(between);
 if (currentIndex === -1) currentIndex = 0;
 
-// Next index (rotate)
 const nextIndex = (currentIndex + 1) % lines.length;
 const nextText = lines[nextIndex];
 
-// Replace block
 const newContent = content.slice(0, start + startMarker.length) + '\n' +
   nextText + '\n' +
   content.slice(end);
