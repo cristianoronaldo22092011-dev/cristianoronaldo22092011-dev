@@ -14,4 +14,3 @@ Hi there 👋 I'm Asadbek
 <!--ROTATE-END-->
 
 Thanks for visiting my profile — let's connect!
-
